@@ -1,12 +1,14 @@
 
+let FromCurrency = "AUD"
+let ToCurrency = "USD"
 
 d3.select("#test").style("background-color", "black");
 
-$("#button").on("click", function yes(){
+$("#button").on("click", function (){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=AUD&to=USD&amount=1",
+        "url": "https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from="+FromCurrency+"&to="+ToCurrency+"&amount=1",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "currency-converter5.p.rapidapi.com",
@@ -16,5 +18,8 @@ $("#button").on("click", function yes(){
     
     $.ajax(settings).done(function (response) {
         console.log(response);
+        let USDValue = response.rates.USD.rate;
+        console.log(USDValue)
+
     });
 });
