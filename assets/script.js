@@ -2,8 +2,6 @@
 let FromCurrency = "AUD"
 let ToCurrency = "USD"
 
-d3.select("#test").style("background-color", "black");
-
 $("#button").on("click", function (){
     let settings = {
         "async": true,

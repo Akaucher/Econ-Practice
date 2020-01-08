@@ -1,41 +1,114 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Home Page</title>
+        <meta charset="utf-8">
+        <title>
+            Currentency App
+        </title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
     </head>
-    <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Astro</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            </ul>
-                <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead" id= "test">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button" id="button">Learn more</a>
-        </div>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+    <img src="assets/All-currency-symbol.svg.png" width="30" height="30">Astro</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" id="masterBar">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Current Location <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
     </div>
-
-    <script src="assets/script.js"></script>
-    </body>    
+  </nav>
+        <div class="container">
+            <div class="jumbotron">
+                <div class="row">
+                  <div class="col">                
+                    <h1 id="locationTitle"></h1>
+                    <hr>
+                    <h3 id="tempature"></h3>
+                    <h3 id="humidity"></h3>
+                    <h3 id="windSpeed"></h3>
+                    <h3 id="uvIndex"></h3>
+                  </div>
+                <!--gifs below-->
+                  <div class="col">
+                    <img src="" alt ="No Icon Found" id= "mainImage">
+                    <form>
+                      <input class="form-control form-control-lg" type="text" placeholder="Enter a new city here!" id="UserWeatherInput">
+                      <br/>
+                      <button type= "button" class="btn btn-primary" id="submit">Submit</button>
+                    </form>
+                  </div>
+                </div>
+              <div class="row"><!--spacer-->
+                <hr>
+              </div>
+              <div class="row">
+                <div class="col" id="day1">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title" id="CityName1"></h5>
+                      <p class="card-text" id="Date1"></p>
+                      <p class="card-text" id="tempature1High"></p>
+                      <p class="card-text" id="tempature1Low"></p>
+                      <p class="card-text" id="Humidity1"></p>
+                      <img src="" alt ="No Icon Found" id= "image1">
+                    </div>
+                  </div>
+                </div>
+                <div class="col" id="day2">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title" id="CityName2"></h5>
+                      <p class="card-text" id="Date2"></p>
+                      <p class="card-text" id="tempature2High"></p>
+                      <p class="card-text" id="tempature2Low"></p>
+                      <p class="card-text" id="Humidity2"></p>
+                      <img src="" alt ="No Icon Found"  id= "image2">
+                    </div>
+                  </div>
+                </div>
+                <div class="col" id="day3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title" id="CityName3"></h5>
+                      <p class="card-text" id="Date3"></p>
+                      <p class="card-text" id="tempature3High"></p>
+                      <p class="card-text" id="tempature3Low"></p>
+                      <p class="card-text" id="Humidity3"></p>
+                      <img src="" alt ="No Icon Found" id= "image3">
+                    </div>
+                  </div>
+                </div>
+                <div class="col" id="day4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title" id="CityName4"></h5>
+                      <p class="card-text" id="Date4"></p>
+                      <p class="card-text" id="tempature4High"></p>
+                      <p class="card-text" id="tempature4Low"></p>
+                      <p class="card-text" id="Humidity4"></p>
+                      <img src="" alt ="No Icon Found" id= "image4">
+                    </div>
+                  </div>
+                </div>
+                  <div class="col" id="day5">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title" id="CityName5"></h5>
+                        <p class="card-text" id="Date5"></p>
+                        <p class="card-text" id="tempature5High"></p>
+                        <p class="card-text" id="tempature5Low"></p>
+                        <p class="card-text" id="Humidity5"></p>
+                        <img src="" alt ="No Icon Found" id= "image5">
+                      </div>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+            </div>
+        </div>
+        <script src="assets/script.js"></script>
+    </body>
 </html>
