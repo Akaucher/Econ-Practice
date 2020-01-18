@@ -1,9 +1,40 @@
+let currencyArray = [
+        {Name : "AUD",
+        countryName : "Austrialia",
+        imageSrc : "assets/AUD.png"
+        },
+        {Name : "JPY",
+        countryName : "Japan",
+        imageSrc : "assets/yen.png"
+        },        
+        {Name : "USD",
+        countryName : "United States",
+        imageSrc : "assets/USD.png"
+        },
+        {Name : "INR",
+        countryName : "India",
+        imageSrc : "assets/Rupee.png"
+        },
+        {Name : "EUR",
+        countryName : "European Union",
+        imageSrc : "assets/Euro.png",
+        },
+        {Name : "MXN",
+        countryName : "Mexico",
+        imageSrc : "assets/peso.png"
+        }
+];
 
-let FromCurrency = "AUD"
-let ToCurrency = "USD"
+
 
 $("#button").on("click", function (){
-    let settings = {
+
+    let FromCurrency = $("#UserInput1").val();
+    let FromCurrencyArrayValue = $("#UserInput1").attr("class");
+    let ToCurrency = $("#UserInput2").val();
+    let ToCurrencyArrayValue = $("UserInput2").attr("value2");
+
+    let settings1 = {
         "async": true,
         "crossDomain": true,
         "url": "https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from="+FromCurrency+"&to="+ToCurrency+"&amount=1",
@@ -14,10 +45,10 @@ $("#button").on("click", function (){
         }
     }
     
-    $.ajax(settings).done(function (response) {
+    $.ajax(settings1).done(function (response) {
         console.log(response);
-        let USDValue = response.rates.USD.rate;
-        console.log(USDValue)
+        console.log(FromCurrencyArrayValue);
+        console.log(ToCurrencyArrayValue);
 
     });
 });

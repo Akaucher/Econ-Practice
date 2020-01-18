@@ -14,9 +14,9 @@
     <img src="assets/All-currency-symbol.svg.png" width="30" height="30">Astro</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto" id="masterBar">
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="#">Current Location <span class="sr-only">(current)</span></a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </nav>
@@ -24,31 +24,62 @@
             <div class="jumbotron">
                 <div class="row">
                   <div class="col">                
-                    <h1 id="locationTitle"></h1>
+                    <h1 id="MainlocationTitle1"></h1>
+                    <img id="mainImage1" src="#" alt="Image not found">
                     <hr>
-                    <h3 id="tempature"></h3>
-                    <h3 id="humidity"></h3>
-                    <h3 id="windSpeed"></h3>
-                    <h3 id="uvIndex"></h3>
+                    <h2 id="MainCurrency1"></h2>
+                    <h3 class="date"></h3>
+                    <hr>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Input Options</label>
+                      </div>
+                      <select class="custom-select" id="UserInput1" aria-label="Example select with button addon">
+                        <option selected>Choose One!</option>
+                        <option value="AUD" value2 = "1">AUD</option>
+                        <option value="JPY" value2 = "2">JPY</option>
+                        <option value="USD" value2 = "3">USD</option>
+                        <option value="INR" value2 = "4">INR</option>
+                        <option value="EUR" value2 = "5">EUR</option>
+                        <option value="MXN" value2 = "6">MXN</option>
+                      </select>
+                    </div>
                   </div>
                 <!--gifs below-->
                   <div class="col">
-                    <img src="" alt ="No Icon Found" id= "mainImage">
-                    <form>
-                      <input class="form-control form-control-lg" type="text" placeholder="Enter a new city here!" id="UserWeatherInput">
-                      <br/>
-                      <button type= "button" class="btn btn-primary" id="submit">Submit</button>
-                    </form>
+                    <h1 id="MainlocationTitle2"></h1>
+                    <img id="mainImage2" src="#" alt="Image not found">
+                    <hr>
+                    <h2 id="MainCurrency2"></h2>
+                    <h3 class="date"></h3>
+                    <hr>
+                    <div class="input-group">
+                      <select class="custom-select" id="UserInput2" aria-label="Example select with button addon">
+                        <option selected>Choose One!</option>
+                        <option value="AUD" class = "1">AUD</option>
+                        <option value="JPY" value2 = "2">JPY</option>
+                        <option value="USD" value2 = "3">USD</option>
+                        <option value="INR" value2 = "4">INR</option>
+                        <option value="EUR" value2 = "5">EUR</option>
+                        <option value="MXN" value2 = "6">MXN</option>
+                      </select>
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Output Options</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              <div class="row"><!--spacer-->
+                <button type="button" id="button" class="btn btn-secondary btn-lg btn-block">Covert and report</button>
+              </div>
               <div class="row"><!--spacer-->
                 <hr>
               </div>
               <div class="row">
-                <div class="col" id="day1">
+                <div class="col" id="box1">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title" id="CityName1"></h5>
+                      <h5 class="card-title" id="CountryName1"></h5>
                       <p class="card-text" id="Date1"></p>
                       <p class="card-text" id="tempature1High"></p>
                       <p class="card-text" id="tempature1Low"></p>
